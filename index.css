@@ -1,0 +1,177 @@
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: linear-gradient(to left, lightblue, lightgreen);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "Arial";
+}
+
+figure {
+    text-align: center;
+    margin: 0;
+}
+
+.cities {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    height: 90vh;
+}
+
+.cities::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+.cities::-webkit-scrollbar-thumb {
+    background: black;
+    border-radius: 10px;
+}
+
+.cities::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.city {
+    flex: 0 0 100%;
+    list-style: none;
+    scroll-snap-align: start;
+    transform-origin: center center;
+    transform: scale(1);
+    transition: transform 0.5s;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.city-name {
+    font-family: 'Nunito';
+    font-weight: bold;
+    font-size: 7rem;
+}
+
+.country-name {
+    font-family: 'Nunito';
+    font-weight: bold;
+    font-size: 5rem;
+}
+
+.country-name,
+.city-name,
+.city-temp {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* .city-temp {
+    font-size: 4rem;
+} */
+
+.selected-city .city-temp {
+    font-size: 4rem;
+}
+
+.selected-city .city-icon {
+    height: 20rem;
+}
+
+.selected-city figcaption {
+    font-size: 3rem;
+}
+
+.city-temp,
+figcaption {
+    font-family: 'Raleway';
+    font-weight: normal;
+}
+
+figcaption {
+    font-size: 2rem;
+}
+
+.city-temp {
+    font-size: 2rem;
+}
+
+.city-icon {
+    height: 8rem;
+}
+
+.selected-city {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.selected-city__week {
+    display: flex;
+    list-style: none;
+}
+
+.city-temp__list-item,
+.city-temp__list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.city-temp__list {
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+
+.city-temp__list-item {
+    flex-basis: 20%;
+}
+
+.navigation {
+    height: 10vh;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.navigation>a {
+    display: inline-flex;
+    width: 3.5rem;
+    height: 3.5rem;
+    background: white;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 1rem;
+    position: relative;
+}
+
+.navigation>a:active {
+    top: 1px;
+}
+
+.navigation>a:focus {
+    background: #000;
+}
+
+
+/* Don't need button navigation */
+
+@supports (scroll-snap-type) {
+    .navigation>a {
+        display: none;
+    }
+}
+
+
+}
+
+/* #text {
+    
+    display: none;
+} */
