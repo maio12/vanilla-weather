@@ -4,10 +4,11 @@ html {
 }
 
 body {
-    background: linear-gradient(to left, lightblue, lightgreen);
+    background: linear-gradient(-190deg, tomato, white);
     background-repeat: no-repeat;
     background-size: cover;
     font-family: "Arial";
+    margin: 0;
 }
 
 figure {
@@ -20,7 +21,8 @@ figure {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-    height: 90vh;
+    height: 94vh;
+    color: white;
 }
 
 .cities::-webkit-scrollbar {
@@ -47,12 +49,23 @@ figure {
     position: relative;
     justify-content: center;
     align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: screen;
 }
 
 .city-name {
     font-family: 'Nunito';
     font-weight: bold;
     font-size: 7rem;
+    margin-bottom: 0;
+    margin-top: 20%;
+}
+
+.city-weather {
+    font-family: 'Nunito';
+    font-size: 3rem;
+    font-weight: lighter;
 }
 
 .country-name {
@@ -61,6 +74,20 @@ figure {
     font-size: 5rem;
 }
 
+span.city-temp__symbol--current {
+    font-family: 'Nunito';
+    font-size: 10rem;
+    position: absolute;
+    right: 22%;
+    top: 500px;
+}
+
+span.city-temp__symbol--week {
+    font-family: 'Nunito';
+    font-size: 2rem;
+}
+
+.city-weather,
 .country-name,
 .city-name,
 .city-temp {
@@ -68,17 +95,14 @@ figure {
     justify-content: center;
 }
 
-
-/* .city-temp {
-    font-size: 4rem;
-} */
-
 .selected-city .city-temp {
-    font-size: 4rem;
+    font-size: 30rem;
+    font-family: 'Quicksand';
 }
 
 .selected-city .city-icon {
     height: 20rem;
+    filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(91deg) brightness(105%) contrast(101%);
 }
 
 .selected-city figcaption {
@@ -101,13 +125,13 @@ figcaption {
 
 .city-icon {
     height: 8rem;
+    filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(91deg) brightness(105%) contrast(101%);
 }
 
 .selected-city {
     height: 80%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
 }
 
 .selected-city__week {
@@ -132,7 +156,6 @@ figcaption {
 }
 
 .navigation {
-    height: 10vh;
     font-size: 2rem;
     display: flex;
     justify-content: center;
@@ -158,20 +181,3 @@ figcaption {
 .navigation>a:focus {
     background: #000;
 }
-
-
-/* Don't need button navigation */
-
-@supports (scroll-snap-type) {
-    .navigation>a {
-        display: none;
-    }
-}
-
-
-}
-
-/* #text {
-    
-    display: none;
-} */
