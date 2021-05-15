@@ -14,7 +14,6 @@ const inputVal = [
 let arr = [];
 inputVal.forEach((el, i) => {
             const url3 = `https://api.openweathermap.org/data/2.5/onecall?lat=${el.lat}&lon=${el.long}&exclude=hourly,minutely,alerts&appid=${apiKey}&units=metric`
-            console.log(url3)
             fetch(url3)
                 .then(response => response.json())
                 .then(data => {
